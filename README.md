@@ -613,6 +613,7 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
     | | Iaas| Paas|Saas|
     |---|---|---|---|
     | example| Amazon Web Services<br>Oracle Public Cloud<br>NeCTAR| Azure| Gmail|
+- more detailed examples in slides
 
 ### past exam
 - > [2015 Q6] C) Describe some of the challenges in delivering hybrid Clouds? [2]
