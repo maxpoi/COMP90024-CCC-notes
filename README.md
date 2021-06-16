@@ -916,9 +916,10 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
             | Retrieve Resource |                   GET                    |
             |  Update Resource  |         POST to an existing URI          |
             |  Delete Resource  |                  DELETE                  |
-        - Don't mapping PUT to Update and POST to create
-            - **PUT** should be used when target resource URL is known by the client.
-            - **POST** should be used when target resource URL is server generated
+        - Don't mapping PUT to Update and POST to create (指的是不要总觉得put就是update，post就是create，要根据情况（也就是下面）自行区分）
+            - **PUT** should be used when target resource URL is known by the client. (比如update price）
+            - **POST** should be used when target resource URL is server generated （比如上架一个新产品）
+            - 更准确的判断应该从他们两个的特性来看，put是idempotent，post则不是。我们的action如果必须要assume no side effect（比如在update price的时候发送了多个请求），那就是用put，否则就是post
 7. HTTP Methods can be 
     - **Safe**
         - Do not change, repeating a call is equivalent to not making a call at all 
