@@ -250,7 +250,7 @@
         - That is, if 95% of the program can be parallelized, the theoretical maximum speedup using parallel computing would be 20 times, no matter how many processors are used.
         - If the non-parallelisable part takes 1H, then no matter how many cores are used, it won’t complete in < 1H
         - Amdahl’s Law greatly simplifies the real world
-    2. Gustafson-Barsis's Law
+    2. Gustafson-Barsis's Law (calculates the "scaled speed-up")
         - speedup is a linear formula dependent on the number of processes and the fraction of time to run sequential parts
         - <img src="./docs/3.jpg" width="60%" height="50%" />
         - Faster (more parallel) equipment available, larger problems can be solved in the same time.
@@ -326,6 +326,8 @@
       - parallel vs interleaved semantics 
         - Most modern multi-core operating systems support different "forms" of parallelisation
         - e.g.: A || B vs A ||| B
+            - |||: interleaved parallel: not truly parallel but looks like parallel, || is theory, and ||| is in reality what we have
+            - unless all processes/threds on running on different memory & cpus, they are not truely running parallel, they have to have interleaving actions.
       - Compute parallelism
         - Processes
           - Used to realize tasks, structure activities
@@ -336,6 +338,7 @@
             - Scheduled by a VM instead of natively by the OS
       - Data parallelism
         - Caching
+        - may not be on "a" computer, but on different computers
     - Software/Applications
       - Programming language supports a range of parallelisation/concurrency features
         - Threads, thread pools, locks, semaphores ...
