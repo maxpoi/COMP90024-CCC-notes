@@ -136,6 +136,9 @@
     - distributed system move back to the centralised system
     - scale of compute/storage
     - clouds and data centres
+    - more details:
+        - centralised architecture (before) vs de-centralised architecture (before) like internet vs now centralised systems (like datacenters)
+        - now increasing amount of data, need tools and resoucres to anaylsis those data (cloud computing)
 
 ## Week2 - Domain Drivers – tour of some big data projects
 1. compute scaling
@@ -935,6 +938,10 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
         - it offers the autonomy 
         - you are providing interface that people/software can interact with
     - Where it is helping cloud computing is every single cloud provider at the builder of the interface using different technlogies i.e. you have to learn the programming language to do that and this can be a major bottleneck. Adpoting SOA like ReST can help to solve this problem. We have apis provided by openstack where you can interact with the cloud with the help of set of libraries for doing that. 
+    - more details:
+        -  service-oriented architectures = having uniform interfaces, apis, and standard ways to access/use resources
+        -  which means all the complexity are hiden, we don't need to know things like which language is used or where it is located when we using the web application
+        -  and cloud does the same thing, like last point (where it is helping...). 
 - > [2013 Q4] A) Compare and contrast Representational State Transfer (ReST) based web services and Simple Object Access Protocol (SOAP)-based web services for implementing service-oriented architectures. [8]
     - They are different flavors of web services
     - complexity of SOAP
