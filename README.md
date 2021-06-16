@@ -41,20 +41,20 @@
     1. Computing and Communication Technologies (r)evolution
         - from centralised to decentralised
     2. distributed system history
-        - Once upon a time we had standards
+        - Once upon a time we had strong & fixed standards (focus only on how to move bits & bytes from this computer to another computer like tcp/ip protocols)
         - Then we had more standards
-        - mid-90s: focused on computer-computer interaction
-        - internet: peer-to-peer
+        - mid-90s: focused on computer-computer interaction 
+        - internet: peer-to-peer (file sharing, like ftp) which causes the web to grow rapidly
             - challenge: sharing data between different organizations
-            - soln: grid computing
-            - Grid: only need access to it no matter it is data or super computer the process to move things
+            - soln: grid computing (move from "computer to computer" to "organisation to organisation"
+            - Grid: resources/data is just somewhere, and if you want to use just use it (somehow); Like the electricity is always there (but you don't know where), you can plugin power and start up your computer whenever you want.
                 - problem: people have different ways to do it
     - Distributed System
         - <u>**Transparency**</u> and **<u>heterogeneity</u>** in computer-computer interactions
         - Finding resources -> Binding resources -> run time type checking -> invoking resources
         - Dealing with heterogeneous of system
         - Challenges
-            - Complexity of implementations
+            - Complexity of implementations (lots different solns to the same problem; lock-in with vendors)
             - Vendor specific solutions
             - Scalability problem
             - Sharing data between different organizations  
@@ -139,6 +139,7 @@
     - more details:
         - centralised architecture (before) vs de-centralised architecture (before) like internet vs now centralised systems (like datacenters)
         - now increasing amount of data, need tools and resoucres to anaylsis those data (cloud computing)
+    - in short: big data + big compute + big distribution + big collaboration + big security drivens the emergence of cloud computing.
 
 ## Week2 - Domain Drivers – tour of some big data projects
 1. compute scaling
@@ -172,6 +173,16 @@
                 - 2) harder to design, develop, test
 2. network scaling
     - volume of data on network grows each year
+    - need tools for:
+        - search/discover data
+        - use/analyse data
+        - share/store data
+        - track/destory data
+        - move data around
+        - check authenticity of data
+        - visualise data
+        - overcome issues of data heterogeneity
+        - ....
 3. massive amount of data generated among a time requires compute infrasture
     - e.g. mapping the sky with data from tele-scope
 5. Cloud Computing in Different Domains
@@ -292,14 +303,14 @@
     - Hardware
         - Hardware Parallelisation
             - **Cache**: much faster than reading/writing to main memory; instruction cache, data cache (multi-level) and translation lookaside buffer used for virtual-physical address translation (more later on Cloud and hypervisors). 
-            - **Add CPU (parallelisation)**: Parallelisation by adding extra CPU to allow more instructions to be processed per cycle. Usually shares arithmetic units. 
+            - **Add CPU only (parallelisation)**: Parallelisation by adding extra CPU only to allow more instructions to be processed per cycle. Usually shares arithmetic units. 
                 - Disadv: Heavy use of one type of computation can tie up all the available units of the CPU preventing other threads from using them.
-            - **Multiple cores**: Multiple cores that can process data and perform computational tasks in parallel.
+            - **Multiple cores (not just cpu, but whole core, like other arthemetic operator units)**: Multiple cores that can process data and perform computational tasks in parallel.
                 - Disadv: Typically share same cache, but issue of cache read/write performance and cache coherence. 
                 - Disadv: Possibility of cache stalls (CPU not doing anything whilst waiting for caching)
                     - To address the issue that CPU not doing anything whilst waiting for caching. Many chips have mixture cache L1 for single core, L2 for pair cores and L3 shared with all cores.
                 - Disadv: typical to have different cache speeds and cache sizes (higher hit rates but potentially higher latency). 
-        - Symmetric Multiprocessing (SMP)
+        - Symmetric Multiprocessing (SMP) (Now build on top of multiple cores, multiple cache is used as well, and leave 1 big shared memory cell)
             - Two (or more) identical processors connected to a single, shared main memory, with full access to all I/O devices, controlled by a single OS instance that treats all processors equally. Each processor executes different programs and works on different data but with capability of sharing common resources (memory, I/O device, …). Processors can be connected in a variety of ways: buses, crossbar switches, meshes.  
                 - Disadv: More complex to program since need to program both for CPU and inter-processor communication (bus).
         - Non-Uniform Memory Access (NUMA)
