@@ -305,19 +305,23 @@
             - **Cache**: much faster than reading/writing to main memory; instruction cache, data cache (multi-level) and translation lookaside buffer used for virtual-physical address translation (more later on Cloud and hypervisors). 
             - **Add CPU only (parallelisation)**: Parallelisation by adding extra CPU only to allow more instructions to be processed per cycle. Usually shares arithmetic units. 
                 - Disadv: Heavy use of one type of computation can tie up all the available units of the CPU preventing other threads from using them.
+            - <img src="./docs/0001.png" width="50%" height="50%" />
             - **Multiple cores (not just cpu, but whole core, like other arthemetic operator units)**: Multiple cores that can process data and perform computational tasks in parallel.
                 - Disadv: Typically share same cache, but issue of cache read/write performance and cache coherence. 
                 - Disadv: Possibility of cache stalls (CPU not doing anything whilst waiting for caching)
                     - To address the issue that CPU not doing anything whilst waiting for caching. Many chips have mixture cache L1 for single core, L2 for pair cores and L3 shared with all cores.
                 - Disadv: typical to have different cache speeds and cache sizes (higher hit rates but potentially higher latency). 
+        - <img src="./docs/0002.png" width="50%" height="50%" />
         - Symmetric Multiprocessing (SMP) (Now build on top of multiple cores, multiple cache is used as well, and leave 1 big shared memory cell)
             - Two (or more) identical processors connected to a single, shared main memory, with full access to all I/O devices, controlled by a single OS instance that treats all processors equally. Each processor executes different programs and works on different data but with capability of sharing common resources (memory, I/O device, …). Processors can be connected in a variety of ways: buses, crossbar switches, meshes.  
                 - Disadv: More complex to program since need to program both for CPU and inter-processor communication (bus).
+        - <img src="./docs/0003.png" width="50%" height="50%" />
         - Non-Uniform Memory Access (NUMA)
             - provides speed-up by allowing a processor to access its own local memory faster than non-local memory.
                 - Disadv: Improved performance as long as data are localized to specific processes/processors. 
                 - Key is allocating memory/processors in NUMA friendly ways, 
                     - e.g. to avoid scheduling/locking and (expensive) inter-processor communication. Approaches such as ccNUMA with range of cache coherency protocols/products. 
+        - <img src="./docs/0004.png" width="50%" height="50%" />
     - Operating System
       - parallel vs interleaved semantics 
         - Most modern multi-core operating systems support different "forms" of parallelisation
