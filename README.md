@@ -835,7 +835,10 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
             - Uniform Interface (below)
             - Resources and Representations instead of RPC (below Resource section)
             - HATEOAS (below)
-4. ReST – Uniform Interface
+4. ReST – Uniform Interface (统一界面，就是response要一致）
+    - https://notfalse.net/35/http-uniform-interface
+    - https://forums.asp.net/t/2108943.aspx?What+is+Uniform+Interface+in+REST
+    - https://en.wikipedia.org/wiki/HATEOAS
     - Uniform Interface has four more constrains:
         - Identification of Resources
             - All important resources are identified by one (uniform) resource identifier mechanism (e.g. HTTP URL)
