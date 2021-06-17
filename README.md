@@ -1108,10 +1108,9 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
     - Number of shards
         - Larger than the number of replica
         - number of nodes is capped/based on number of shards: 
-            - the max number of nodes = the number of shards (to ensure that least a node contains the same shard file twice)
+            - the max number of nodes = the number of shards (prevent that a node contains the same shard file twice)
     - Number of nodes
         - larger than the number of replicas (usually set to 3)
-        - The max number of nodes = the number of shards (lest a node contains the same shard file twice)    
     - The main advantage of a sharded database lies in the
         - improve performance through the distribution of computing load across nodes. 
             - i.e.: better distribution of data
@@ -1131,7 +1130,6 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
         - q is the number of shards (how many files a database is split)
         - n * q is the total number of shard files distributed in the different nodes of the cluster
         - <img src="./docs/31.png" width="60%" height="50%" />
-            
             - There are 16 shards since the three node clustered database has n=2 replicas and q=8 shards. 
 7. Partitions
     - What is it?  
