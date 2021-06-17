@@ -1586,7 +1586,7 @@ Terminology
     - Intel and AMD introduced extensions to make x86 virtualisable
 3. What are the requirements for virtualisation?
     - <img src="./docs/17.jpg" width="40%" height="30%" />
-    |Typical Virtualisation Strategy||Achieved by|problem|
+    |VMM needs to support||Achieved by|problem|
     |---|---|---|---|
     |De-privileging (trap-and-emulate)|trap-and-emulate: VMM emulates the effect on system/hardware resources of privileged instructions whose execution traps into the VMM|running GuestOS at a lower hardware priority level than the VMM|Problematic on some architectures where privileged instructions do not trap when executed at de-privileged level
     |Primary/shadow structures|1. VMM maintains “shadow” copies of critical structures whose “primary” versions are manipulated by the GuestOS, e.g. memory page tables<br/>2. Primary copies needed to insure correct versions are visible to GuestOS
