@@ -1056,7 +1056,7 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
         |||
         |---|---|
         |Consistency|every client receiving an answer receives **the same answer** from all nodes in the cluster (it doesn't depend on which node is quired)
-        |Availability|every client receives **an answer** from any node in the cluster (which might differ from node to node)
+        |Availability|every client receives **an answer** from any node in the cluster (which might differ from node to node; 如果有nodes不能response，那就是reduced availability；也就是说，前面说的“any”是指“all nodes”)
         |Partition-Tolerance|the cluster **keeps on operating** when one or more nodes cannot communicate with the rest of the cluster
     - Brewer’s CAP Theorem: you can only pick any two of Consistency, Availability and Partition-Tolerance.
         - <img src="./docs/13.jpg" width="30%" height="50%" />
@@ -1107,7 +1107,8 @@ Representational State Transfer (ReST) is intended to evoke an image of how a we
         - shard: Every subset of rows
     - Number of shards
         - Larger than the number of replica
-        - the number of shards = the max number of nodes (lest a node contains the same shard file twice)
+        - number of nodes is capped/based on number of shards: 
+            - the max number of nodes = the number of shards (to ensure that least a node contains the same shard file twice)
     - Number of nodes
         - larger than the number of replicas (usually set to 3)
         - The max number of nodes = the number of shards (lest a node contains the same shard file twice)    
